@@ -10,12 +10,16 @@ import { Deputado } from "../shared/deputado"
 export class HomeComponent implements OnInit {
 
   deputados: Deputado[] = [];
+  total = 0;
 
   constructor(private deputadoService: DeputadoService) { }
 
   ngOnInit() {
     this.deputadoService.getDeputados().subscribe(itens => {
-      this.deputados = itens
+      this.deputados = itens;
+      itens.forEach(item => {
+        this.total += item.total
+      })
     });
   }
 

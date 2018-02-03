@@ -1,4 +1,6 @@
 <div class="container">
+  <h1>Gastos dos deputados em 2017</h1>
+  <p>Total gasto por todos os deputados: {{ total }}</p>
   <div *ngFor="let deputado of deputados">
     <img src="{{ deputado.urlFoto }}" style="border-radius: 50%">
     <p>{{ deputado.nome }}</p>
