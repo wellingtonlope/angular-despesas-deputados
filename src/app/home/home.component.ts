@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DeputadoService} from "../service/deputado.service";
+import {Deputado} from "../shared/deputado";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  deputados: Deputado[] = []
+
+  constructor(private deputadoService: DeputadoService) { }
 
   ngOnInit() {
+    this.deputadoService.getDeputados().subscribe(itens => {
+      this.deputados = itens
+    })
   }
 
 }
