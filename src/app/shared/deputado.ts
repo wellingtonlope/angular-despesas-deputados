@@ -11,4 +11,5 @@ export class Deputado {
   hospedagem: number;
   outro: number;
   total: number;
+  urlFoto: string
 }

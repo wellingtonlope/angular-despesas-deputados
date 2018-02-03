@@ -1,6 +1,13 @@
 <div class="container">
   <div *ngFor="let deputado of deputados">
+    <img src="{{ deputado.urlFoto }}" style="border-radius: 50%">
     <p>{{ deputado.nome }}</p>
+    <p>Total gasto: R$ {{ deputado.total }}</p>
+    <canvas baseChart
+            [data]="[deputado.telefone, deputado.transporte, deputado.viagem, deputado.escritorio, deputado.marketing, deputado.seguranca, deputado.alimentacao, deputado.hospedagem, deputado.outro]"
+            [labels]="['Telefone', 'Transporte', 'Viagem', 'Escritorio', 'Marketing', 'Segurança', 'Alimentação', 'Hospedagem', 'Outro']"
+            [chartType]="'pie'">
+    </canvas>
+    <hr>
   </div>
 </div>
-

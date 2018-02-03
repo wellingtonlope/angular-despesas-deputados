@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AngularFireDatabaseModule } from "angularfire2/database";
 import { DeputadoService } from "./service/deputado.service";
+import {ChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { DeputadoService } from "./service/deputado.service";
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ChartsModule
   ],
   providers: [
     DeputadoService
