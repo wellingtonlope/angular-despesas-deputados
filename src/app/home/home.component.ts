@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DeputadoService } from "../service/deputado.service";
-import { Deputado } from "../shared/deputado"
+import { DeputadoService } from '../service/deputado.service';
+import { Deputado } from '../shared/deputado';
 
 @Component({
   selector: 'app-home',
@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
     this.deputadoService.getDeputados().subscribe(itens => {
       this.deputados = itens;
       itens.forEach(item => {
-        this.total += item.total
-      })
+        this.total += item.total;
+      });
     });
   }
 

@@ -7,7 +7,16 @@
     <p>Total gasto: R$ {{ deputado.total }}</p>
     <canvas baseChart
             [data]="[deputado.telefone, deputado.transporte, deputado.viagem, deputado.escritorio, deputado.marketing, deputado.seguranca, deputado.alimentacao, deputado.hospedagem, deputado.outro]"
-            [labels]="['Telefone', 'Transporte', 'Viagem', 'Escritorio', 'Marketing', 'Segurança', 'Alimentação', 'Hospedagem', 'Outro']"
+            [labels]="[
+              'Telefone (' + (100.0 * deputado.telefone / deputado.total).toFixed(2) + '%)',
+              'Transporte (' + (100.0 * deputado.transporte / deputado.total).toFixed(2) + '%)',
+              'Viagem (' + (100.0 * deputado.viagem / deputado.total).toFixed(2) + '%)',
+              'Escritorio (' + (100.0 * deputado.escritorio / deputado.total).toFixed(2) + '%)',
+              'Marketing (' + (100.0 * deputado.marketing / deputado.total).toFixed(2) + '%)',
+              'Segurança (' + (100.0 * deputado.seguranca / deputado.total).toFixed(2) + '%)',
+              'Alimentação (' + (100.0 * deputado.alimentacao / deputado.total).toFixed(2) + '%)',
+              'Hospedagem (' + (100.0 * deputado.hospedagem / deputado.total).toFixed(2) + '%)',
+              'Outro (' + (100.0 * deputado.outro / deputado.total).toFixed(2) + '%)']"
             [chartType]="'pie'">
     </canvas>
     <hr>
